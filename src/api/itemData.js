@@ -13,5 +13,17 @@ const getOrderItems = (orderId) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-// eslint-disable-next-line import/prefer-default-export
-export { getOrderItems };
+const getSingleItem = (itemFbKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/items/${itemFbKey}.json`)
+    .then((itemObj) => resolve(itemObj))
+    .catch((error) => reject(error));
+});
+
+const deleteItem = (itemFbKey, orderId) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/items/${itemFbKey}.json`)
+    .then(() => {
+      getOrderItems(orderId).then((itemsArr) => resolve(itemsArr));
+    }).catch((error) => reject(error));
+});
+
+export { getOrderItems, getSingleItem, deleteItem };
