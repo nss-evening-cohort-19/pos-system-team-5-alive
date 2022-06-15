@@ -3,12 +3,13 @@ import renderToDom from '../helpers/renderToDom';
 
 const navBar = () => {
   const domString = `
-  <nav class="navbar navbar-expand-lg bg-light">
+  <nav class="navbar bg-light">
   <div class="container">
     <a class="navbar-brand" href="#">
       <img src=${hhpwLogo} alt="" width="30" height="24">
     </a>
-  </div>
+    </div>
+  <div id="logout-btn"></div>
 </nav>`;
   renderToDom('#nav-bar', domString);
 };
