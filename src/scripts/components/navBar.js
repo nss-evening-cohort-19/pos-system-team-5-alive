@@ -3,7 +3,7 @@ import renderToDom from '../helpers/renderToDom';
 
 const navBar = () => {
   const domString = `
-  <nav class="navbar navbar-expand-lg bg-light">
+  <nav class="navbar navbar-expand-lg" style="background-color:#F8F7F2;">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
       <img src=${hhpwLogo} alt="" width="65" height="65">
