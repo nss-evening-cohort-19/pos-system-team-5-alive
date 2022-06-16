@@ -2,7 +2,7 @@ import { getSingleItem, deleteItem } from '../../../api/itemData';
 import orderDetails from '../pages/orderDetails';
 
 const domEvents = () => {
-  document.querySelector('#main-div').addEventListener('click', (e) => {
+  document.querySelector('#main-container').addEventListener('click', (e) => {
     if (e.target.id.includes('editItem')) {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleItem(firebaseKey).then((itemObj) => {
