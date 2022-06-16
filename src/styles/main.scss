@@ -6,3 +6,19 @@ body {
   background-color: antiquewhite;
   color: brown;
 }
+
+.login {
+  // background-image: url(https://p4.wallpaperbetter.com/wallpaper/997/201/154/music-equalizer-wallpaper-preview.jpg);
+  background-image: url(https://wallpapers.com/images/high/hip-hop-boombox-lq79cd39lc76l0vq.jpg);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  min-width: 100%;
+  max-width: 100%;
+  padding-top: 75px;
+  text-align: center;
+  img {
+    height: 500px;
+    width: 500px;
+  }
+}

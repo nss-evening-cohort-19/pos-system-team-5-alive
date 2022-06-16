@@ -6,7 +6,7 @@ const navBar = () => {
   <nav class="navbar navbar-expand-lg" style="background-color:#F8F7F2;">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img src=${hhpwLogo} alt="" width="65" height="65">
+      <img src=${hhpwLogo} alt="Hip Hop, Pizza and Wangs Logo" width="65" height="65">
       HHP+W
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
