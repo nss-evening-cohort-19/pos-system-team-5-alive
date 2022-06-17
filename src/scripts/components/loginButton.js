@@ -8,7 +8,7 @@ const loginButton = () => {
     <img src=${hhpwLogo} alt="Hip Hop, Pizza and Wangs Logo">
     <button id="google-auth" class="btn btn-success">
       Let&#39s Get It Started Up In Here
-    </button>;
+    </button>
   </div>`;
   document.querySelector('#app').innerHTML = domString;
   document.querySelector('#google-auth').addEventListener('click', signIn);
