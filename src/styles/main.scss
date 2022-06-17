@@ -15,10 +15,12 @@ body {
   bottom: 0;
   min-width: 100%;
   max-width: 100%;
-  padding-top: 75px;
-  text-align: center;
+  padding-top: 87px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   img {
-    height: 500px;
-    width: 500px;
+    height: 400px;
+    width: 400px;
   }
 }
