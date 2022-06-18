@@ -35,3 +35,17 @@ const editOrder = (orderObj) => new Promise((resolve, reject) => {
     .then(() => getOrders().then(resolve))
     .catch(reject);
 });
+
+// Delete Order
+const deleteOrder = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/orders/${firebaseKey}.json`)
+    .then((response) => resolve(response.data))
+    .catch((error) => reject(error));
+});
+
+export {
+  getOrders,
+  createOrder,
+  editOrder,
+  deleteOrder
+};
