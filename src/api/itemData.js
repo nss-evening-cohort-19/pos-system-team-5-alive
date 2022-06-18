@@ -26,4 +26,20 @@ const deleteItem = (itemFbKey, orderId) => new Promise((resolve, reject) => {
     }).catch((error) => reject(error));
 });
 
-export { getOrderItems, getSingleItem, deleteItem };
+const createItem = (itemObj) => new Promise((resolve, reject) => {
+  axios.post(`${dbUrl}/items.json`, itemObj)
+    .then((response) => {
+      const payload = { firebaseKey: response.data.name };
+      axios.patch(`${dbUrl}/items/${response.data.name}.json`, payload)
+        .then(() => {
+          getOrderItems(itemObj.orderId).then(resolve);
+        });
+    }).catch(reject);
+});
+
+export {
+  getOrderItems,
+  getSingleItem,
+  deleteItem,
+  createItem
+};
