@@ -22,7 +22,7 @@ const addOrderForm = (obj = {}) => {
       </div>
       <div class="form-group" id="select-order">
       </div>
-      <button type="submit" class="btn btn-primary">Submit Book
+      <button type="submit" class="btn btn-primary">Submit Order
       </button>
     </form>`;
   renderToDom('#form-container', domString);

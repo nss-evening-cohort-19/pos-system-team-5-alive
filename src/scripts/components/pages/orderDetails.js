@@ -24,7 +24,7 @@ const orderDetails = (orderId) => {
       });
       content += `<div class="orderDetailButtons">
     <button id="addItemBtn--${orderId}" type="button" class="btn btn-success">Add Item</button>
-    <button id="paymentBtn--${orderId}" type="button" class="btn btn-primary">Go To Payment</button>
+    <button id="paymentBtn--${orderId}--${total}" type="button" class="btn btn-primary">Go To Payment</button>
     </div>`;
       renderToDom('#main-header', `<h1>Total: $</h1>${total}`);
       renderToDom('#order-div', content);
