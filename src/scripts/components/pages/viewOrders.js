@@ -3,14 +3,10 @@ import renderToDom from '../../helpers/renderToDom';
 
 const emptyOrders = () => {
   const domString = '<h1>No orders have been added</h1>';
-  renderToDom('#cards', domString);
+  renderToDom('#order-div', domString);
 };
 const showOrders = (array) => {
   clearDom();
-
-  const btnString = '<button class="btn btn-success btn-lg mb-4" id="add--btn">Create an Order</button>';
-
-  renderToDom('#add-button', btnString);
 
   if (array.length) {
     let domString = '';
@@ -25,7 +21,7 @@ const showOrders = (array) => {
         </div>
       </div>`;
     });
-    renderToDom('#cards', domString);
+    renderToDom('#order-div', domString);
   } else {
     emptyOrders();
   }

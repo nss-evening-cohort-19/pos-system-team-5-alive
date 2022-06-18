@@ -17,16 +17,15 @@ const getOrders = (uid) => new Promise((resolve, reject) => {
 });
 
 // Create Order
-const createOrder = (orderObj) => new Promise((resolve, reject) => {
+const createOrder = (orderObj, uid) => new Promise((resolve, reject) => {
   axios.post(`${dbUrl}/orders.json`, orderObj)
     .then((response) => {
       const payload = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/orders/${response.data.name}.json`, payload)
         .then(() => {
-          getOrders().then(resolve);
+          getOrders(uid).then((orderArray) => resolve(orderArray));
         });
-    })
-    .catch((error) => reject(error));
+    }).catch((error) => reject(error));
 });
 
 // Edit Order

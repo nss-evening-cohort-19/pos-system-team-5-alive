@@ -1,5 +1,7 @@
 import { getSingleItem, deleteItem } from '../../../api/itemData';
+import { deleteOrder } from '../../../api/orderData';
 import orderDetails from '../pages/orderDetails';
+import showOrders from '../pages/viewOrders';
 
 const domEvents = () => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -13,6 +15,12 @@ const domEvents = () => {
       const [, firebaseKey, orderId] = e.target.id.split('--');
       deleteItem(firebaseKey, orderId).then((itemsArr) => {
         orderDetails(itemsArr);
+      });
+    }
+    if (e.target.id.includes('delete-order')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      deleteOrder(firebaseKey).then((orderArray) => {
+        showOrders(orderArray);
       });
     }
   });
