@@ -22,7 +22,7 @@ const formEvents = (uid) => {
       const [, firebaseKey] = e.target.id.split('--');
       const orderObj = {
         name: document.querySelector('#name').value,
-        phone: document.querySelector('#phone').value,
+        // phone: document.querySelector('#phone').value,
         email: document.querySelector('#email').value,
         type: document.querySelector('#type').value,
         uid,
