@@ -1,5 +1,4 @@
 import { createOrder, editOrder, getOrders } from '../../../api/orderData';
-import orderDetails from '../pages/orderDetails';
 import showOrders from '../pages/viewOrders';
 
 const formEvents = (uid) => {
@@ -30,7 +29,7 @@ const formEvents = (uid) => {
         firebaseKey
       };
       editOrder(orderObj, uid).then(() => {
-        getOrders(uid).then((orderArray) => orderDetails(orderArray));
+        getOrders(uid).then((orderArray) => showOrders(orderArray));
       });
     }
   });
