@@ -1,9 +1,20 @@
 import { createOrder, editOrder, getOrders } from '../../../api/orderData';
 import showOrders from '../pages/viewOrders';
+import { createItem } from '../../../api/itemData';
+import orderDetails from '../pages/orderDetails';
 
 const formEvents = (uid) => {
-  document.querySelector('#main-container').addEventListener('submit', (e) => {
+  document.querySelector('#form-container').addEventListener('submit', (e) => {
     e.preventDefault();
+    if (e.target.id.includes('submit-item')) {
+      const [, orderId] = e.target.id.split('--');
+      const itemObj = {
+        item: document.querySelector('#item-name').value,
+        price: document.querySelector('#item-price').value,
+        orderId
+      };
+      createItem(itemObj).then(() => orderDetails(orderId));
+    }
 
     if (e.target.id.includes('create-order')) {
       const orderObj = {
@@ -31,6 +42,13 @@ const formEvents = (uid) => {
       editOrder(orderObj, uid).then(() => {
         getOrders(uid).then((orderArray) => showOrders(orderArray));
       });
+    }
+  });
+  document.querySelector('#form-container').addEventListener('click', (e) => {
+    e.preventDefault();
+    if (e.target.id.includes('cancelBtn')) {
+      const [, orderId] = e.target.id.split('--');
+      orderDetails(orderId);
     }
   });
 };

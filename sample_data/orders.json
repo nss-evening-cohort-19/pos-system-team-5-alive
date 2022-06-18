@@ -1,0 +1,20 @@
+{
+  "-sample1234" : {
+    "firebaseKey" : "-sample1234",
+    "name" : "Table 2",
+    "email" : "someone@gmail.com",
+    "type" : "in_person",
+    "status" : "open",
+    "phone" : "7076211665",
+    "uid" : "x"
+  },
+  "-sample2345" : {
+    "firebaseKey" : "-sample2345",
+    "name" : "Table 2",
+    "email" : "someone@gmail.com",
+    "type" : "in_person",
+    "status" : "open",
+    "phone" : "7076211665",
+    "uid" : "x"
+  }
+}
