@@ -6,10 +6,10 @@ const closeOrder = (orderId, total) => {
       <div class="mb-3">
         <label for="payment-type" class="form-label">Payment Type</label>
         <select class="form-select" aria-label="Default select example">
-          <option value="1">Cash</option>
-          <option selected>Open this select menu</option>
-          <option value="3">Mobile</option>
-          <option value="2">Card</option>
+        <option selected>Open this select menu</option>
+          <option value="cash">Cash</option>
+          <option value="card">Card</option>
+          <option value="mobile">Mobile</option>
         </select>
       </div>
     <div class="mb-3">
