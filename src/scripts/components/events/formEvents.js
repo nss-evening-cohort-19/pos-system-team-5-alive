@@ -1,4 +1,4 @@
-import { createItem } from '../../../api/itemData';
+import { createItem, updateItem } from '../../../api/itemData';
 import orderDetails from '../pages/orderDetails';
 
 const formEvents = () => {
@@ -13,6 +13,18 @@ const formEvents = () => {
         orderId
       };
       createItem(itemObj).then(() => orderDetails(orderId));
+    }
+
+    if (e.target.id.includes('update-item')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      const itemObj = {
+        item: document.querySelector('#item-name').value,
+        price: document.querySelector('#item.price').value,
+        firebaseKey
+      };
+      updateItem(itemObj).then(() => {
+        orderDetails(firebaseKey);
+      });
     }
   });
 };
