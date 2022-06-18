@@ -9,10 +9,6 @@ const addOrderForm = (obj = {}) => {
         <label for="name">Order Name</label>
         <input type="text" class="form-control" id="name" aria-describedby="orderName" placeholder="Enter Name of Order" value="${obj.name || ''}" required>
       </div>
-      // <div class="form-group">
-      //   <label for="phone">Customer Phone</label>
-      //   <input type="number" class="form-control" id="phone" placeholder="Customer Phone" value="${obj.type || ''}"
-      // </div>
       <div class="form-group">
         <label for="email">Customer Email</label>
         <input type="email" class="form-control" id="email" placeholder="Customer Email" value="${obj.email || ''}"
@@ -27,7 +23,7 @@ const addOrderForm = (obj = {}) => {
       </div>
       <div class="form-group" id="select-order">
       </div>
-      <button type="submit" class="btn btn-primary">Submit Book
+      <button type="submit" class="btn btn-primary">Submit Order
       </button>
     </form>`;
   renderToDom('#form-container', domString);

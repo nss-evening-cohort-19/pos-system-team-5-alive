@@ -8,10 +8,6 @@ const emptyOrders = () => {
 const showOrders = (array) => {
   clearDom();
 
-  const btnString = '<button class="btn btn-success btn-lg mb-4" id="add--btn">Create Order</button>';
-
-  renderToDom('#add-button', btnString);
-
   if (array.length) {
     let domString = '';
     array.forEach((obj) => {
