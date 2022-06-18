@@ -8,7 +8,7 @@ const domEvents = () => {
     if (e.target.id.includes('editItem')) {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleItem(firebaseKey).then((itemObj) => {
-        console.warn(itemObj);
+        addItem(itemObj);
       });
     }
     if (e.target.id.includes('deleteItem')) {
