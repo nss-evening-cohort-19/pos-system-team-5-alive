@@ -6,3 +6,20 @@ body {
   background-color: antiquewhite;
   color: brown;
 }
+
+.login {
+  background-image: url(https://p4.wallpaperbetter.com/wallpaper/997/201/154/music-equalizer-wallpaper-preview.jpg);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  min-width: 100%;
+  max-width: 100%;
+  padding-top: 87px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  img {
+    height: 400px;
+    width: 400px;
+  }
+}
