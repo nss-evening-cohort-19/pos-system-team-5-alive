@@ -1,5 +1,5 @@
 import { getSingleItem, deleteItem } from '../../../api/itemData';
-import { deleteOrder, getOrders } from '../../../api/orderData';
+import { deleteOrder, getOrders, getSingleOrder } from '../../../api/orderData';
 import addOrderForm from '../forms/createOrder';
 import closeOrder from '../forms/closeOrder';
 import addItem from '../forms/createItem';
@@ -8,6 +8,7 @@ import showOrders from '../pages/viewOrders';
 
 const domEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
+    console.warn(e.target.id);
     if (e.target.id.includes('editItem')) {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleItem(firebaseKey).then((itemObj) => {
@@ -20,11 +21,12 @@ const domEvents = (uid) => {
         orderDetails(orderId);
       });
     }
-    if (e.target.id.includes('delete-order')) {
-      const [, firebaseKey] = e.target.id.split('--');
-      deleteOrder(firebaseKey).then((orderArray) => {
-        showOrders(orderArray);
-      });
+    if (e.target.id.includes('delete-order-btn')) {
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Want to delete?')) {
+        const [, firebaseKey] = e.target.id.split('--');
+        deleteOrder(firebaseKey).then((orderArray) => showOrders(orderArray));
+      }
     }
     if (e.target.id.includes('viewOrders')) {
       getOrders(uid).then((orderArray) => {
@@ -32,9 +34,13 @@ const domEvents = (uid) => {
       });
     }
     if (e.target.id.includes('createOrder')) {
-      addOrderForm();
+      addOrderForm(uid);
     }
-    if (e.target.target.id.includes('addItemBtn')) {
+    if (e.target.id.includes('edit-order')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      getSingleOrder(firebaseKey).then((orderObj) => addOrderForm(orderObj));
+    }
+    if (e.target.id.includes('addItemBtn')) {
       const [, orderId] = e.target.id.split('--');
       addItem({}, orderId);
     }

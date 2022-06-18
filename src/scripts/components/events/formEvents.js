@@ -20,7 +20,8 @@ const formEvents = (uid) => {
       const orderObj = {
         name: document.querySelector('#name').value,
         email: document.querySelector('#email').value,
-        type: document.querySelector('#type').value,
+        phone: document.querySelector('#phone').value,
+        type: document.querySelector('#orderType').value,
         uid
       };
       console.warn(orderObj);
@@ -33,22 +34,15 @@ const formEvents = (uid) => {
       const [, firebaseKey] = e.target.id.split('--');
       const orderObj = {
         name: document.querySelector('#name').value,
-        // phone: document.querySelector('#phone').value,
         email: document.querySelector('#email').value,
-        type: document.querySelector('#type').value,
+        phone: document.querySelector('#phone').value,
+        type: document.querySelector('#orderType').value,
         uid,
         firebaseKey
       };
       editOrder(orderObj, uid).then(() => {
         getOrders(uid).then((orderArray) => showOrders(orderArray));
       });
-    }
-  });
-  document.querySelector('#form-container').addEventListener('click', (e) => {
-    e.preventDefault();
-    if (e.target.id.includes('cancelBtn')) {
-      const [, orderId] = e.target.id.split('--');
-      orderDetails(orderId);
     }
   });
 };

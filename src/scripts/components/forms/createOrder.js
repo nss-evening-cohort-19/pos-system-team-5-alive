@@ -13,16 +13,21 @@ const addOrderForm = (obj = {}) => {
         <label for="email">Customer Email</label>
         <input type="email" class="form-control" id="email" placeholder="Customer Email" value="${obj.email || ''}"
       </div>
+      <div class="form-group">
+        <label for="number">Customer Phone Number</label>
+        <input type="number" class="form-control" id="phone" placeholder="Customer Phone Number" value="${obj.email || ''}"
+      </div>
       <div class="form-floating">
         <select class="form-select" id="orderType">
         <option selected>Order Type</option>
         <option value="Phone">Phone</option>
         <option value="Email">Email</option>
+        <option value="In Person">In Person</option>
         </select>
       </div>
       <div class="form-group" id="select-order">
       </div>
-      <button type="submit" class="btn btn-primary">Submit Order
+      <button type="submit" class="btn btn-primary">Create Order
       </button>
     </form>`;
   renderToDom('#form-container', domString);

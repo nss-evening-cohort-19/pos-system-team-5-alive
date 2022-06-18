@@ -30,15 +30,24 @@ const createOrder = (orderObj, uid) => new Promise((resolve, reject) => {
 
 // Edit Order
 const editOrder = (orderObj) => new Promise((resolve, reject) => {
-  axios.patch(`${dbUrl}/orders/${orderObj.firebaseKey}.json`)
+  axios.patch(`${dbUrl}/orders/${orderObj.firebaseKey}.json`, orderObj)
     .then(() => getOrders().then(resolve))
     .catch(reject);
 });
 
-// Delete Order
-const deleteOrder = (firebaseKey) => new Promise((resolve, reject) => {
-  axios.delete(`${dbUrl}/orders/${firebaseKey}.json`)
+// Get Single Order
+const getSingleOrder = (firebaseKey) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/orders/${firebaseKey}.json`)
     .then((response) => resolve(response.data))
+    .catch((error) => reject(error));
+});
+
+// Delete Order
+const deleteOrder = (firebaseKey, uid) => new Promise((resolve, reject) => {
+  axios.delete(`${dbUrl}/orders/${firebaseKey}.json`)
+    .then(() => {
+      getOrders(uid).then((orderArray) => resolve(orderArray));
+    })
     .catch((error) => reject(error));
 });
 
@@ -46,5 +55,6 @@ export {
   getOrders,
   createOrder,
   editOrder,
-  deleteOrder
+  deleteOrder,
+  getSingleOrder
 };
