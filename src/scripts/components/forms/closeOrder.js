@@ -5,7 +5,7 @@ const closeOrder = (orderId, total) => {
   const content = `<form id="submitPayment--${orderId}">
       <div class="mb-3">
         <label for="payment-type" class="form-label">Payment Type</label>
-        <select class="form-select" aria-label="Default select example">
+        <select id="payType" class="form-select" aria-label="Default select example">
         <option selected>Open this select menu</option>
           <option value="cash">Cash</option>
           <option value="card">Card</option>
@@ -13,8 +13,8 @@ const closeOrder = (orderId, total) => {
         </select>
       </div>
     <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Tip Amount</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
+      <label for="tipAmount" class="form-label">Tip Amount</label>
+      <input type="password" class="form-control" id="tipAmount">
     </div> 
       <button id="submitBtn" type="submit" class="btn btn-success">Close Order</button>
       <button id="cancelBtn--${orderId} "type="cancel" class="btn btn-primary">Go Back</button>
