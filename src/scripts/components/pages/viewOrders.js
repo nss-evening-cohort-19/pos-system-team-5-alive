@@ -3,7 +3,7 @@ import renderToDom from '../../helpers/renderToDom';
 
 const emptyOrders = () => {
   const domString = '<h1>No orders have been added</h1>';
-  renderToDom('#cards', domString);
+  renderToDom('#order-div', domString);
 };
 const showOrders = (array) => {
   clearDom();
@@ -25,7 +25,7 @@ const showOrders = (array) => {
         </div>
       </div>`;
     });
-    renderToDom('#cards', domString);
+    renderToDom('#order-div', domString);
   } else {
     emptyOrders();
   }
