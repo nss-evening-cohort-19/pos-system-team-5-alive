@@ -1,0 +1,16 @@
+{
+  "-sample9876" : {
+    "firebaseKey" : "-sample9876",
+    "item" : "Dry Rub Wings",
+    "order_id" : "-sample2345",
+    "price" : "10.50",
+    "uid" : "x"
+  },
+  "-sample7654" : {
+    "firebaseKey" : "-sample7654",
+    "item" : "Dry Rub Wings",
+    "order_id" : "-sample2345",
+    "price" : "8.25",
+    "uid" : "x"
+  }
+}

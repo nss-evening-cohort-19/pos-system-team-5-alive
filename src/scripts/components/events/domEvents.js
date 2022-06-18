@@ -1,4 +1,5 @@
 import { getSingleItem, deleteItem } from '../../../api/itemData';
+import addItem from '../forms/createItem';
 import orderDetails from '../pages/orderDetails';
 
 const domEvents = () => {
@@ -11,9 +12,13 @@ const domEvents = () => {
     }
     if (e.target.id.includes('deleteItem')) {
       const [, firebaseKey, orderId] = e.target.id.split('--');
-      deleteItem(firebaseKey, orderId).then((itemsArr) => {
-        orderDetails(itemsArr);
+      deleteItem(firebaseKey, orderId).then(() => {
+        orderDetails(orderId);
       });
+    }
+    if (e.target.target.id.includes('addItemBtn')) {
+      const [, orderId] = e.target.id.split('--');
+      addItem({}, orderId);
     }
   });
 };
