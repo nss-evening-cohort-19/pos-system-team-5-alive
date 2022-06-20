@@ -8,7 +8,6 @@ import showOrders from '../pages/viewOrders';
 
 const domEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
-    console.warn(e.target.id);
     if (e.target.id.includes('editItem')) {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleItem(firebaseKey).then((itemObj) => {
@@ -47,6 +46,10 @@ const domEvents = (uid) => {
     if (e.target.id.includes('paymentBtn')) {
       const [, orderId, total] = e.target.id.split('--');
       closeOrder(orderId, total);
+    }
+    if (e.target.id.includes('view-order')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      getSingleOrder(firebaseKey).then((orderObj) => orderDetails((orderObj)));
     }
   });
 };

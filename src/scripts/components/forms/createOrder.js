@@ -11,15 +11,15 @@ const addOrderForm = (obj = {}) => {
       </div>
       <div class="form-group">
         <label for="email">Customer Email</label>
-        <input type="email" class="form-control" id="email" placeholder="Customer Email" value="${obj.email || ''}"
+        <input type="email" class="form-control" id="email" placeholder="Customer Email" value="${obj.email || ''}" required>
       </div>
       <div class="form-group">
         <label for="number">Customer Phone Number</label>
-        <input type="number" class="form-control" id="phone" placeholder="Customer Phone Number" value="${obj.email || ''}"
+        <input type="text" class="form-control" id="phone" placeholder="Customer Phone Number" value="${obj.phone || ''}" required>
       </div>
       <div class="form-floating">
         <select class="form-select" id="orderType">
-        <option selected>Order Type</option>
+        <option selected>Select an order type</option>
         <option value="Phone">Phone</option>
         <option value="Email">Email</option>
         <option value="In Person">In Person</option>
