@@ -17,13 +17,24 @@ const domEvents = () => {
         orderDetails(orderId);
       });
     }
-    if (e.target.target.id.includes('addItemBtn')) {
+    if (e.target.id.includes('addItemBtn')) {
       const [, orderId] = e.target.id.split('--');
       addItem({}, orderId);
     }
     if (e.target.id.includes('paymentBtn')) {
       const [, orderId, total] = e.target.id.split('--');
       closeOrder(orderId, total);
+    }
+  });
+  document.querySelector('#main-header').addEventListener('click', (e) => {
+    if (e.target.id.includes('#view-orders-dom-btn')) {
+      console.warn('VIEW ORDERS button clicked');
+    }
+    if (e.target.id.includes('#create-order-dom-btn')) {
+      console.warn('CREATE ORDER button clicked');
+    }
+    if (e.target.id.includes('#view-revenue-dom-btn')) {
+      console.warn('VIEW REVENUE button clicked');
     }
   });
 };
