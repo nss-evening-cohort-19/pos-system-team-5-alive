@@ -6,7 +6,7 @@ const dbUrl = firebaseConfig.databaseURL;
 // GET REVENUE PAGE
 const getRevenue = (uid) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/revenues.json?orderBy="uid"&equalTo="${uid}"`)
-    .then((response) => resolve(response.data))
+    .then((response) => resolve(Object.values(response.data)))
     .catch(reject);
 });
 
@@ -17,7 +17,7 @@ const postRevenue = (newRevenueObj) => new Promise((resolve, reject) => {
       const body = { firebaseKey: response.data.name };
       axios.patch(`${dbUrl}/cards/${response.data.name}.json`, body)
         .then(() => {
-
+          getRevenue(newRevenueObj.uid).then(resolve);
         });
     })
     .catch(reject);
