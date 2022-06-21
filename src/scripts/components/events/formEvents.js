@@ -22,6 +22,7 @@ const formEvents = (uid) => {
         email: document.querySelector('#email').value,
         phone: document.querySelector('#phone').value,
         type: document.querySelector('#orderType').value,
+        status: 'open',
         uid
       };
       console.warn(orderObj);

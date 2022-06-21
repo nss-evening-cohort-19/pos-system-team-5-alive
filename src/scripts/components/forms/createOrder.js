@@ -28,6 +28,7 @@ const addOrderForm = (obj = {}) => {
       </div>
       <div class="form-group" id="select-order">
       </div>
+      <div id="status" value="${obj.status || ''}"></div>
       <button type="submit" class="btn btn-primary">Create Order
       </button>
     </form>`;
