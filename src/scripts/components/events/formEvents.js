@@ -1,7 +1,9 @@
+import { createOrder, editOrder, getOrders } from '../../../api/orderData';
+import { showOrders } from '../pages/viewOrders';
 import { createItem } from '../../../api/itemData';
 import orderDetails from '../pages/orderDetails';
 
-const formEvents = () => {
+const formEvents = (uid) => {
   document.querySelector('#form-container').addEventListener('submit', (e) => {
     e.preventDefault();
     if (e.target.id.includes('submit-item')) {
@@ -13,12 +15,34 @@ const formEvents = () => {
       };
       createItem(itemObj).then(() => orderDetails(orderId));
     }
-  });
-  document.querySelector('#form-container').addEventListener('click', (e) => {
-    e.preventDefault();
-    if (e.target.id.includes('cancelBtn')) {
-      const [, orderId] = e.target.id.split('--');
-      orderDetails(orderId);
+
+    if (e.target.id.includes('create-order')) {
+      const orderObj = {
+        name: document.querySelector('#name').value,
+        email: document.querySelector('#email').value,
+        phone: document.querySelector('#phone').value,
+        type: document.querySelector('#orderType').value,
+        uid
+      };
+      console.warn(orderObj);
+      createOrder(orderObj, uid).then((orderArray) => {
+        showOrders(orderArray);
+      });
+    }
+
+    if (e.target.id.includes('edit-order')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      const orderObj = {
+        name: document.querySelector('#name').value,
+        email: document.querySelector('#email').value,
+        phone: document.querySelector('#phone').value,
+        type: document.querySelector('#orderType').value,
+        uid,
+        firebaseKey
+      };
+      editOrder(orderObj, uid).then(() => {
+        getOrders(uid).then((orderArray) => showOrders(orderArray));
+      });
     }
   });
 };

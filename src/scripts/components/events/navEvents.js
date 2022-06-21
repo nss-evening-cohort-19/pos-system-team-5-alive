@@ -1,6 +1,9 @@
+import { getOrders } from '../../../api/orderData';
 import signOut from '../../helpers/signOut';
+import addOrderForm from '../forms/createOrder';
+import { showOrders } from '../pages/viewOrders';
 
-const navEvents = () => {
+const navEvents = (uid) => {
   // LOGOUT BUTTON
   document.querySelector('#logout-btn').addEventListener('click', signOut);
 
@@ -11,12 +14,12 @@ const navEvents = () => {
 
   // VIEW ORDER CARDS
   document.querySelector('#viewOrders').addEventListener('click', () => {
-    console.warn('Will render user&#39s order cards');
+    getOrders(uid).then((orderArray) => showOrders(orderArray));
   });
 
   // CREATE A NEW ORDER FORM
   document.querySelector('#createOrder').addEventListener('click', () => {
-    console.warn('Will render new order form');
+    addOrderForm(uid);
   });
 };
 
