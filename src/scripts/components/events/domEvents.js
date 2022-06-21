@@ -26,16 +26,17 @@ const domEvents = () => {
       closeOrder(orderId, total);
     }
   });
-  document.querySelector('#main-header').addEventListener('click', (e) => {
-    if (e.target.id.includes('#view-orders-dom-btn')) {
-      console.warn('VIEW ORDERS button clicked');
-    }
-    if (e.target.id.includes('#create-order-dom-btn')) {
-      console.warn('CREATE ORDER button clicked');
-    }
-    if (e.target.id.includes('#view-revenue-dom-btn')) {
-      console.warn('VIEW REVENUE button clicked');
-    }
+
+  document.querySelector('#view-orders-dom-btn').addEventListener('click', () => {
+    console.warn('cliked view order btn');
+  });
+
+  document.querySelector('#create-order-dom-btn').addEventListener('click', () => {
+    console.warn('clicked create order btn');
+  });
+
+  document.querySelector('#view-revenue-dom-btn').addEventListener('click', () => {
+    console.warn('clicked view revenue btn');
   });
 };
 
