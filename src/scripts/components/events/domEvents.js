@@ -59,7 +59,7 @@ const domEvents = (uid) => {
     }
     if (e.target.id.includes('view-order')) {
       const [, firebaseKey] = e.target.id.split('--');
-      getSingleOrder(firebaseKey).then((orderObj) => orderDetails((orderObj)));
+      getSingleOrder(firebaseKey).then((orderObj) => orderDetails(orderObj.firebaseKey));
     }
     // REVENUE BTN CLICKED
     if (e.target.id.includes('view-revenue-dom-btn')) {
