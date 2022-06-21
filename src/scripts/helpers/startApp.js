@@ -9,7 +9,7 @@ import homeButtons from '../components/pages/homeScreen';
 const startApp = (user) => {
   domBuilder();
   navBar();
-  homeButtons(user.uid);
+  homeButtons(user);
   logoutButton();
   navEvents(user.uid);
   formEvents(user.uid);
