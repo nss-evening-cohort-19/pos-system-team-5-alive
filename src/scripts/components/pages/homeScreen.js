@@ -11,7 +11,7 @@ const homeButtons = (user) => {
   <button type="button" class="btn btn-primary btn-lg btn-block" id="create-order-dom-btn">Create an Order</button>
   <button type="button" class="btn btn-warning btn-lg btn-block" id="view-revenue-dom-btn">View Revenue</button>
   `;
-  renderToDom('#main-container', domString);
+  renderToDom('#main-header', domString);
 };
 
 export default homeButtons;
