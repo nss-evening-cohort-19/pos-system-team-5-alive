@@ -11,6 +11,7 @@ const getRevenue = (uid) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+// GET TOTAL OF ORDER BEFORE TIP
 const orderItemsSum = (uid, orderId) => new Promise((resolve, reject) => {
   getOrderItems(orderId).then((orderItemsArray) => {
     const findPrice = orderItemsArray.filter((item) => Number(uid, item.price));
