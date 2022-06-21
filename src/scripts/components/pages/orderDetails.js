@@ -1,10 +1,13 @@
 import { getOrderItems } from '../../../api/itemData';
+import clearDom from '../../helpers/clearDom';
 import renderToDom from '../../helpers/renderToDom';
 
 const orderDetails = (orderId) => {
+  clearDom();
   let content = '';
   let total = 0;
   getOrderItems(orderId).then((itemsArr) => {
+    console.warn(itemsArr);
     if (itemsArr.length) {
       itemsArr.forEach((item) => {
         total += item.price;
