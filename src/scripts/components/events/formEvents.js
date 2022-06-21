@@ -44,6 +44,21 @@ const formEvents = (uid) => {
         getOrders(uid).then((orderArray) => showOrders(orderArray));
       });
     }
+
+    if (e.target.id.includes('replace-with-what-is-on-payment-html')) {
+      const revenueObj = {
+        payment_type: document.querySelector('#the-id-for-payment-type').value,
+        tip: document.querySelector('#id-for-tip-amount').value,
+        date: new Date().toLocaleString(),
+        order_type: document.querySelector('#placeholder'),
+        total: document.querySelector('#placeholder'),
+        firebaseKey,
+        uid
+      };
+      getRevenue(revenueObj).then(() => {
+        revenue(uid)
+      })
+    }
   });
 };
 

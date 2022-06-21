@@ -1,13 +1,25 @@
 import axios from 'axios';
 import firebaseConfig from './apiKeys';
+import { getOrderItems } from './itemData';
 
 const dbUrl = firebaseConfig.databaseURL;
 
 // GET REVENUE PAGE
-const getRevenue = () => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/revenues.json?orderBy="uid"&equalTo="2458497W58"`)
+const getRevenue = (uid) => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/revenues.json?orderBy="uid"&equalTo="${uid}"`)
     .then((response) => resolve(Object.values(response.data)))
     .catch(reject);
+});
+
+const orderItemsSum = (uid, orderId) => new Promise((resolve, reject) => {
+  getOrderItems(orderId).then((orderItemsArray) => {
+    const findPrice = orderItemsArray.filter((item) => Number(uid, item.price));
+    const totalPreTip = findPrice.reduce((a, b) => a + b.price, 0);
+
+    Promise.all(totalPreTip).then(() => {
+      getRevenue(uid).then(resolve);
+    });
+  }).catch(reject);
 });
 
 // POST NEW REVENUE PAGE
@@ -25,5 +37,6 @@ const postRevenue = (newRevenueObj) => new Promise((resolve, reject) => {
 
 export {
   getRevenue,
+  orderItemsSum,
   postRevenue
 };
