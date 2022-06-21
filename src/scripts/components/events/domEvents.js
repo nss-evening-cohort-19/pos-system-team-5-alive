@@ -55,9 +55,9 @@ const domEvents = (uid) => {
       const [, orderId, total] = e.target.id.split('--');
       closeOrder(orderId, total);
     }
-    if (e.target.id.includes('view-order')) {
+    if (e.target.id.includes('order-details')) {
       const [, firebaseKey] = e.target.id.split('--');
-      getSingleOrder(firebaseKey).then((orderObj) => orderDetails((orderObj)));
+      getSingleOrder(firebaseKey).then((orderObj) => orderDetails(orderObj));
     }
   });
 };
