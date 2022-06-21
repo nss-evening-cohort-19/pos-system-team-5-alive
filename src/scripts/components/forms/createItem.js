@@ -13,7 +13,7 @@ const addItem = (obj = {}, orderId) => {
     <label for="item-price" class="form-label">Item Price</label>
     <input type="text" class="form-control" id="item-price" value ="${obj.price || ''}">
   </div>
-  <button id="item-form-btn" type="submit" class="btn btn-primary">"${obj.firebaseKey} ? Update Item : Submit Item"</button>
+  <button id="item-form-btn" type="submit" class="btn btn-primary">${obj.firebaseKey ? 'Update Item' : 'Submit Item'}</button>
 </form>
 `;
 
