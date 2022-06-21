@@ -3,7 +3,7 @@ import axios from 'axios';
 const dbUrl = 'https://team5-hiphop-pos-default-rtdb.firebaseio.com/';
 
 const getOrderItems = (orderId) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/items.json?orderBy="order_id"&equalTo="${orderId}"`)
+  axios.get(`${dbUrl}/items.json?orderBy="orderId"&equalTo="${orderId}"`)
     .then((itemsArr) => {
       if (itemsArr.data) {
         resolve(Object.values(itemsArr.data));
