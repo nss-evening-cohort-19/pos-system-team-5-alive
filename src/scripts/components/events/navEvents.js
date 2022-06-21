@@ -1,12 +1,13 @@
 import signOut from '../../helpers/signOut';
+import homeButtons from '../pages/homeScreen';
 
 const navEvents = () => {
   // LOGOUT BUTTON
   document.querySelector('#logout-btn').addEventListener('click', signOut);
 
   // LOGO CLICK RENDERS HOME SCREEN
-  document.querySelector('#home').addEventListener('click', () => {
-    console.warn('Will render home screen once logo is clicked');
+  document.querySelector('#home').addEventListener('click', (user) => {
+    homeButtons(user);
   });
 
   // VIEW ORDER CARDS
