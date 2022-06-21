@@ -1,15 +1,13 @@
 import { getOrderItems } from '../../../api/itemData';
+import clearDom from '../../helpers/clearDom';
 import renderToDom from '../../helpers/renderToDom';
 
-const noItems = () => {
-  const content = 'No items on order';
-  renderToDom('#order-div', content);
-};
-
 const orderDetails = (orderId) => {
+  clearDom();
   let content = '';
   let total = 0;
   getOrderItems(orderId).then((itemsArr) => {
+    console.warn(itemsArr);
     if (itemsArr.length) {
       itemsArr.forEach((item) => {
         total += item.price;
@@ -29,7 +27,11 @@ const orderDetails = (orderId) => {
       renderToDom('#main-header', `<h1>Total: $</h1>${total}`);
       renderToDom('#order-div', content);
     } else {
-      noItems();
+      content = `<h2>No Items On Order</h2><div class="orderDetailButtons">
+    <button id="addItemBtn--${orderId}" type="button" class="btn btn-success">Add Item</button>
+    <button id="paymentBtn--${orderId}--${total}" type="button" class="btn btn-primary">Go To Payment</button>
+    </div>`;
+      renderToDom('#order-div', content);
     }
   });
 };
