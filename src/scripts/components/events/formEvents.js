@@ -1,5 +1,5 @@
 import { createOrder, editOrder, getOrders } from '../../../api/orderData';
-import showOrders from '../pages/viewOrders';
+import { showOrders } from '../pages/viewOrders';
 import { createItem } from '../../../api/itemData';
 import orderDetails from '../pages/orderDetails';
 

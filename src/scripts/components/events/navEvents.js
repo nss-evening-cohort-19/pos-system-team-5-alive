@@ -1,7 +1,7 @@
 import { getOrders } from '../../../api/orderData';
 import signOut from '../../helpers/signOut';
 import addOrderForm from '../forms/createOrder';
-import showOrders from '../pages/viewOrders';
+import { showOrders } from '../pages/viewOrders';
 
 const navEvents = (uid) => {
   // LOGOUT BUTTON

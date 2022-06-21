@@ -24,9 +24,7 @@ const showOrders = (array) => {
       </div>`;
     });
     renderToDom('#order-div', domString);
-  } else {
-    emptyOrders();
   }
 };
 
-export default showOrders;
+export { showOrders, emptyOrders };

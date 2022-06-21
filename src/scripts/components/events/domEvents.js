@@ -4,7 +4,7 @@ import addOrderForm from '../forms/createOrder';
 import closeOrder from '../forms/closeOrder';
 import addItem from '../forms/createItem';
 import orderDetails from '../pages/orderDetails';
-import showOrders from '../pages/viewOrders';
+import { showOrders } from '../pages/viewOrders';
 
 const domEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -20,12 +20,20 @@ const domEvents = (uid) => {
         orderDetails(orderId);
       });
     }
-    if (e.target.id.includes('delete-order-btn')) {
-      // eslint-disable-next-line no-alert
-      if (window.confirm('Want to delete?')) {
-        const [, firebaseKey] = e.target.id.split('--');
-        deleteOrder(firebaseKey).then((orderArray) => showOrders(orderArray));
-      }
+    // if (e.target.id.includes('delete-order')) {
+    //   // eslint-disable-next-line no-alert
+    //   if (window.confirm('Want to delete?')) {
+    //     const [, firebaseKey] = e.target.id.split('--');
+    //     deleteOrder(firebaseKey).then((orderArray) => showOrders(orderArray));
+    //   }
+    // }
+    if (e.target.id.includes('delete-order')) {
+      const [, firebaseKey] = e.target.id.split('--');
+      deleteOrder(firebaseKey).then(() => {
+        getOrders(uid).then((orderArray) => {
+          showOrders(orderArray);
+        });
+      });
     }
     if (e.target.id.includes('viewOrders')) {
       getOrders(uid).then((orderArray) => {
