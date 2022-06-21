@@ -25,7 +25,6 @@ const formEvents = (uid) => {
         status: 'open',
         uid
       };
-      console.warn(orderObj);
       createOrder(orderObj, uid).then((orderArray) => {
         showOrders(orderArray);
       });
