@@ -5,6 +5,8 @@ import closeOrder from '../forms/closeOrder';
 import addItem from '../forms/createItem';
 import orderDetails from '../pages/orderDetails';
 import { showOrders } from '../pages/viewOrders';
+import { getRevenue } from '../../../api/revenueData';
+import revenue from '../pages/revenue';
 
 const domEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -58,6 +60,10 @@ const domEvents = (uid) => {
     if (e.target.id.includes('view-order')) {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleOrder(firebaseKey).then((orderObj) => orderDetails((orderObj)));
+    }
+    // REVENUE BTN CLICKED
+    if (e.target.id.includes('view-revenue-dom-btn')) {
+      getRevenue().then((revenueArray) => revenue(revenueArray));
     }
   });
 };

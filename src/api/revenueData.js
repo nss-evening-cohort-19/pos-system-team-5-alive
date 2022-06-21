@@ -4,8 +4,8 @@ import firebaseConfig from './apiKeys';
 const dbUrl = firebaseConfig.databaseURL;
 
 // GET REVENUE PAGE
-const getRevenue = (uid) => new Promise((resolve, reject) => {
-  axios.get(`${dbUrl}/revenues.json?orderBy="uid"&equalTo="${uid}"`)
+const getRevenue = () => new Promise((resolve, reject) => {
+  axios.get(`${dbUrl}/revenues.json?orderBy="uid"&equalTo="2458497W58"`)
     .then((response) => resolve(Object.values(response.data)))
     .catch(reject);
 });
