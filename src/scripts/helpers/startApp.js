@@ -1,3 +1,4 @@
+import formEvents from '../components/events/formEvents';
 import domBuilder from '../components/domBuilder';
 import domEvents from '../components/events/domEvents';
 import navEvents from '../components/events/navEvents';
@@ -11,6 +12,7 @@ const startApp = (user) => {
   homeButtons(user.uid);
   logoutButton();
   navEvents(user.uid);
+  formEvents(user.uid);
   domEvents(user.uid);
 };
 
