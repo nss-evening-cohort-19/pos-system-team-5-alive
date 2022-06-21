@@ -15,7 +15,7 @@ const getOrderItems = (orderId) => new Promise((resolve, reject) => {
 
 const getSingleItem = (itemFbKey) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/items/${itemFbKey}.json`)
-    .then((itemObj) => resolve(itemObj))
+    .then((itemObj) => resolve(itemObj.data))
     .catch((error) => reject(error));
 });
 
