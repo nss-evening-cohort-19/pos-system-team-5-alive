@@ -63,7 +63,18 @@ const domEvents = (uid) => {
     }
     // REVENUE BTN CLICKED
     if (e.target.id.includes('view-revenue-dom-btn')) {
-      getRevenue().then((revenueArray) => revenue(revenueArray));
+      getRevenue().then((revenueArray) => {
+        // const findOrderType = revenueArray.filter((item) => item.order_type.toLowerCase);
+        // const findPaymentType = revenueArray.filter((item) => item.payment_type.toLowerCase);
+        const findTipAmount = revenueArray.filter((item) => Number(item.tip));
+        const tipSum = findTipAmount.reduce((a, b) => a + b.tip, 0);
+        document.querySelector('totalTips').innerHTML = tipSum.toFixed(2);
+        const findTotalAmount = revenueArray.filter((item) => Number(item.total));
+        const totalSum = findTotalAmount.reduce((a, b) => a + b.total, 0);
+        document.querySelector('#totalRevenue').innerHTML = totalSum.toFixed(2);
+        revenue(uid);
+      });
+      // getRevenue().then((revenueArray) => revenue(revenueArray));
     }
   });
 };
