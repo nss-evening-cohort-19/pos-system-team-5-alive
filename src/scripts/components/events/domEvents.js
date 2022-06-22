@@ -60,6 +60,19 @@ const domEvents = (uid) => {
       getSingleOrder(firebaseKey).then((orderObj) => orderDetails(orderObj.firebaseKey));
     }
   });
+
+  document.querySelector('#view-orders-dom-btn').addEventListener('click', () => {
+    console.warn('cliked view order btn');
+    getOrders(uid).then((orderArray) => showOrders(orderArray));
+  });
+
+  document.querySelector('#create-order-dom-btn').addEventListener('click', () => {
+    addOrderForm({}, uid);
+  });
+
+  document.querySelector('#view-revenue-dom-btn').addEventListener('click', () => {
+    console.warn('clicked view revenue btn');
+  });
 };
 
 export default domEvents;
