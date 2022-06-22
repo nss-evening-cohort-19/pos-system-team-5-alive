@@ -14,11 +14,12 @@ const orderDetails = (orderId) => {
       <div class="card-body">
         <h5 class="card-title">${item.item}</h5>
         <h6 class="card-subtitle mb-2">$${item.price}</h6>
-        <a id="editItem--${item.firebaseKey}" href="#" class="card-link">Edit Item</a>
+        <a id="editItem--${item.firebaseKey}--${orderId}" href="#" class="card-link">Edit Item</a>
         <a id="deleteItem--${item.firebaseKey}--${item.orderId}" href="#" class="card-link">Delete Item</a>
       </div>
     </div>`;
       });
+      total = total.toFixed(2);
       content += `<div class="orderDetailButtons">
     <button id="addItemBtn--${orderId}" type="button" class="btn btn-success">Add Item</button>
     <button id="paymentBtn--${orderId}--${total}" type="button" class="btn btn-primary">Go To Payment</button>

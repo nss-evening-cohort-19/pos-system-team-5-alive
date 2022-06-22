@@ -4,7 +4,7 @@ import renderToDom from '../../helpers/renderToDom';
 const addItem = (obj = {}, orderId) => {
   clearDom();
   const domString = `
-  <form id="${obj.firebaseKey ? `update-item--${obj.firebaseKey}` : `submit-item--${orderId}`}">
+  <form id="${obj.firebaseKey ? `update-item--${obj.firebaseKey}--${orderId}` : `submit-item--${orderId}`}">
   <div class="mb-3">
     <label for="item-name" class="form-label">Item Name</label>
     <input type="text" class="form-control" id="item-name" value="${obj.item || ''}" required>
