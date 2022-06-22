@@ -4,6 +4,7 @@ import homeButtons from '../pages/homeScreen';
 import addOrderForm from '../forms/createOrder';
 import { showOrders } from '../pages/viewOrders';
 import clearDom from '../../helpers/clearDom';
+import domEvents from './domEvents';
 
 const navEvents = (user) => {
   // LOGOUT BUTTON
@@ -13,6 +14,7 @@ const navEvents = (user) => {
   document.querySelector('#home').addEventListener('click', () => {
     clearDom();
     homeButtons(user);
+    domEvents(user.uid);
   });
 
   // VIEW ORDER CARDS
