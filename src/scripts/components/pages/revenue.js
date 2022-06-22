@@ -17,16 +17,12 @@ const revenue = (array) => {
         <h4 id='dateRange'>Date Range: ${item.date}</h4>
         <h2 id='totalRevenue'>Total Revenue: $${Number(0 + item.total).toFixed(2)}</h2>
         <p id='totalTips'>Total Tips: $${Number(0 + item.tip).toFixed(2)}</p>
-        <p id='totalCallIn'>Total Call In Orders: 0</p>
-        <p id='totalWalkIn'>Total Walk In Orders: 0</p>
-        <ul>Orders Status Summary:
-          <li id='totalOpen'>Open: ${item.orderType === 'open'}</li>
-          <li id='totalClosed'>Closed: ${item.orderType === 'closed'}</li>
-        </ul>
+        <p id='totalCallIn'>Total Call In Orders: ${item.orderType === 'Phone' ? 1 : 0}</p>
+        <p id='totalWalkIn'>Total Walk In Orders: ${item.orderType === 'In Person' ? 1 : 0}</p>
         <ul>Payment Types:
-          <li id='totalUsedCash'>Cash: ${item.payment === 'cash'}</li>
-          <li id='totalUsedCard'>Credit Card: ${item.payment === 'card'}</li>
-          <li id='totalUsedMobile'>Mobile: ${item.payment === 'mobile'}</li>
+          <li id='totalUsedCash'>Cash: ${item.payment === 'cash' ? 1 : 0}</li>
+          <li id='totalUsedCard'>Credit Card: ${item.payment === 'card' ? 1 : 0}</li>
+          <li id='totalUsedMobile'>Mobile: ${item.payment === 'mobile' ? 1 : 0}</li>
         </ul>
       </div>`;
     });
