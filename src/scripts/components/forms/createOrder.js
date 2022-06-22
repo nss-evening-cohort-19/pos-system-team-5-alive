@@ -21,7 +21,6 @@ const addOrderForm = (obj = {}) => {
         <select class="form-select" id="orderType" required>
         <option value="" selected>Select an order type</option>
         <option value="Phone" ${obj.type === 'Phone' ? 'selected' : ''}>Phone</option>
-        <option value="Email" ${obj.type === 'Email' ? 'selected' : ''}>Email</option>
         <option value="In Person" ${obj.type === 'In Person' ? 'selected' : ''}>In Person</option>
         </select>
         <label for="floatingSelect">Select an order type</label>
