@@ -9,9 +9,9 @@ import { showOrders } from '../pages/viewOrders';
 const domEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     if (e.target.id.includes('editItem')) {
-      const [, firebaseKey] = e.target.id.split('--');
+      const [, firebaseKey, orderId] = e.target.id.split('--');
       getSingleItem(firebaseKey).then((itemObj) => {
-        addItem(itemObj);
+        addItem(itemObj, orderId);
       });
     }
     if (e.target.id.includes('deleteItem')) {
