@@ -19,7 +19,7 @@ const closeOrder = (orderId, total) => {
       <input type="text" class="form-control" id="tipAmount">
     </div> 
       <button id="submitBtn" type="submit" class="btn btn-success">Close Order</button>
-      <button id="cancelBtn--${orderId} "type="cancel" class="btn btn-primary">Go Back</button>
+      <button id="cancelBtn--${orderId}" type="button" class="btn btn-primary">Go Back</button>
     </form>`;
   renderToDom('#main-header', orderTotal);
   renderToDom('#form-container', content);
