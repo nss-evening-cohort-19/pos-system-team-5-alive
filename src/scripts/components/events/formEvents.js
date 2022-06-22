@@ -66,9 +66,7 @@ const formEvents = (uid) => {
         total: document.querySelector('#placeholder'),
         uid
       };
-      getRevenue(revenueObj).then(() => {
-        revenue(uid)
-      })
+      console.warn(revenueObj);
     }
   });
 };
