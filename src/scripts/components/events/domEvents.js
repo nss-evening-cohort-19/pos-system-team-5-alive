@@ -6,7 +6,8 @@ import addItem from '../forms/createItem';
 import orderDetails from '../pages/orderDetails';
 import { showOrders } from '../pages/viewOrders';
 // import { getRevenue } from '../../../api/revenueData';
-import revenue from '../pages/revenue';
+// import revenue from '../pages/revenue';
+// import { orderItemsSum } from '../../../api/revenueData';
 
 const domEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
@@ -88,7 +89,7 @@ const domEvents = (uid) => {
   });
 
   document.querySelector('#view-revenue-dom-btn').addEventListener('click', () => {
-    revenue();
+    console.warn('Help');
   });
 };
 
