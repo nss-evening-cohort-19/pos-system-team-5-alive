@@ -20,13 +20,13 @@ const revenue = (array) => {
         <p id='totalCallIn'>Total Call In Orders: 0</p>
         <p id='totalWalkIn'>Total Walk In Orders: 0</p>
         <ul>Orders Status Summary:
-          <li id='totalOpen'>Open: 0</li>
-          <li id='totalClosed'>Closed: 0</li>
+          <li id='totalOpen'>Open: ${item.orderType === 'open'}</li>
+          <li id='totalClosed'>Closed: ${item.orderType === 'closed'}</li>
         </ul>
         <ul>Payment Types:
-          <li id='totalUsedCash'>Cash: 0</li>
-          <li id='totalUsedCard'>Credit Card: 0</li>
-          <li id='totalUsedMobile'>Mobile: 0</li>
+          <li id='totalUsedCash'>Cash: ${item.payment === 'cash'}</li>
+          <li id='totalUsedCard'>Credit Card: ${item.payment === 'card'}</li>
+          <li id='totalUsedMobile'>Mobile: ${item.payment === 'mobile'}</li>
         </ul>
       </div>`;
     });
