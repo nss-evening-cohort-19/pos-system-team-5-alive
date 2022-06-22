@@ -11,7 +11,7 @@ const revenue = () => {
       revenueArray.forEach((item) => {
         domString += `<div id='revenuePage'>
         <h1>REVENUE</h1>
-        <h4 id='dateRange'>Date Range:</h4>
+        <h4 id='dateRange'>Date Range: ${item.date}</h4>
         <h2 id='totalRevenue'>Total Revenue: $${item.total}</h2>
         <p id='totalTips'>Total Tips: $${item.tip}</p>
         <p id='totalCallIn'>Total Call In Orders: 0</p>

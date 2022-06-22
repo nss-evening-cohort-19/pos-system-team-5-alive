@@ -3,8 +3,7 @@ import { showOrders } from '../pages/viewOrders';
 import { createItem, updateItem } from '../../../api/itemData';
 import orderDetails from '../pages/orderDetails';
 import revenue from '../pages/revenue';
-import { postRevenue } from '../../../api/revenueData';
-// import revenue from '../pages/revenue';
+import { getRevenue, postRevenue } from '../../../api/revenueData';
 
 const formEvents = (uid) => {
   document.querySelector('#form-container').addEventListener('submit', (e) => {
@@ -71,7 +70,7 @@ const formEvents = (uid) => {
         orderId,
         uid
       };
-      postRevenue(revenueObj, uid).then((revenueArray) => revenue(revenueArray));
+      postRevenue(revenueObj, uid).then(() => getRevenue(uid)).then((revenueArray) => revenue(revenueArray));
     }
   });
 };
