@@ -17,14 +17,14 @@ const formEvents = (uid) => {
     }
 
     if (e.target.id.includes('update-item')) {
-      const [, firebaseKey] = e.target.id.split('--');
+      const [, firebaseKey, orderId] = e.target.id.split('--');
       const itemObj = {
         item: document.querySelector('#item-name').value,
-        price: document.querySelector('#item.price').value,
+        price: document.querySelector('#item-price').value,
         firebaseKey
       };
-      updateItem(itemObj).then(() => {
-        orderDetails(firebaseKey);
+      updateItem(itemObj, firebaseKey).then(() => {
+        orderDetails(orderId);
       });
     }
 
