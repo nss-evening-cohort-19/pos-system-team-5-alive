@@ -14,9 +14,9 @@ import revenue from '../pages/revenue';
 const domEvents = (uid) => {
   document.querySelector('#main-container').addEventListener('click', (e) => {
     if (e.target.id.includes('editItem')) {
-      const [, firebaseKey] = e.target.id.split('--');
+      const [, firebaseKey, orderId] = e.target.id.split('--');
       getSingleItem(firebaseKey).then((itemObj) => {
-        addItem(itemObj);
+        addItem(itemObj, orderId);
       });
     }
     if (e.target.id.includes('deleteItem')) {
@@ -25,22 +25,18 @@ const domEvents = (uid) => {
         orderDetails(orderId);
       });
     }
-    // if (e.target.id.includes('delete-order')) {
-    //   // eslint-disable-next-line no-alert
-    //   if (window.confirm('Want to delete?')) {
-    //     const [, firebaseKey] = e.target.id.split('--');
-    //     deleteOrder(firebaseKey).then((orderArray) => showOrders(orderArray));
-    //   }
-    // }
     if (e.target.id.includes('delete-order')) {
-      const [, firebaseKey] = e.target.id.split('--');
-      deleteOrder(firebaseKey).then(() => {
-        getOrders(uid).then((orderArray) => {
-          showOrders(orderArray);
+      // eslint-disable-next-line no-alert
+      if (window.confirm('Want to delete?')) {
+        const [, firebaseKey] = e.target.id.split('--');
+        deleteOrder(firebaseKey).then(() => {
+          getOrders(uid).then((orderArray) => {
+            showOrders(orderArray);
+          });
         });
-      });
+      }
     }
-    if (e.target.id.includes('viewOrders')) {
+    if (e.target.id.includes('order-details')) {
       getOrders(uid).then((orderArray) => {
         showOrders(orderArray);
       });
@@ -60,7 +56,7 @@ const domEvents = (uid) => {
       const [, orderId, total] = e.target.id.split('--');
       closeOrder(orderId, total);
     }
-    if (e.target.id.includes('view-order')) {
+    if (e.target.id.includes('order-details')) {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleOrder(firebaseKey).then((orderObj) => orderDetails(orderObj.firebaseKey));
     }

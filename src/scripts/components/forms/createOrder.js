@@ -20,14 +20,14 @@ const addOrderForm = (obj = {}) => {
       <div class="form-floating">
         <select class="form-select" id="orderType" required>
         <option value="" selected>Select an order type</option>
-        <option value="Phone">Phone</option>
-        <option value="Email">Email</option>
-        <option value="In Person">In Person</option>
+        <option value="Phone" ${obj.type === 'Phone' ? 'selected' : ''}>Phone</option>
+        <option value="In Person" ${obj.type === 'In Person' ? 'selected' : ''}>In Person</option>
         </select>
         <label for="floatingSelect">Select an order type</label>
       </div>
       <div class="form-group" id="select-order">
       </div>
+      <div id="status" value="${obj.status || ''}"></div>
       <button type="submit" class="btn btn-primary">Create Order
       </button>
     </form>`;

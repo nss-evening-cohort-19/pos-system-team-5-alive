@@ -17,14 +17,14 @@ const formEvents = (uid) => {
     }
 
     if (e.target.id.includes('update-item')) {
-      const [, firebaseKey] = e.target.id.split('--');
+      const [, firebaseKey, orderId] = e.target.id.split('--');
+      console.warn(orderId);
       const itemObj = {
         item: document.querySelector('#item-name').value,
-        price: document.querySelector('#item.price').value,
-        firebaseKey
+        price: document.querySelector('#item-price').value,
       };
-      updateItem(itemObj).then(() => {
-        orderDetails(firebaseKey);
+      updateItem(itemObj, firebaseKey).then(() => {
+        orderDetails(orderId);
       });
     }
 
@@ -34,9 +34,9 @@ const formEvents = (uid) => {
         email: document.querySelector('#email').value,
         phone: document.querySelector('#phone').value,
         type: document.querySelector('#orderType').value,
+        status: 'open',
         uid
       };
-      console.warn(orderObj);
       createOrder(orderObj, uid).then((orderArray) => {
         showOrders(orderArray);
       });
