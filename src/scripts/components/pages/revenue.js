@@ -14,7 +14,6 @@ const revenue = () => {
   <p>Orders Status Summary:</p>
   <ul>
     <li id='totalOpen'>Open: 0</li>
-    <li id='totalInProgress'>In-progress: 0</li>
     <li id='totalClosed'>Closed: 0</li>
   </ul>
   <p>Payment Types:</p>
