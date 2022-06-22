@@ -5,6 +5,8 @@ import closeOrder from '../forms/closeOrder';
 import addItem from '../forms/createItem';
 import orderDetails from '../pages/orderDetails';
 import { showOrders } from '../pages/viewOrders';
+import { getRevenue } from '../../../api/revenueData';
+import revenue from '../pages/revenue';
 // import { getRevenue } from '../../../api/revenueData';
 // import revenue from '../pages/revenue';
 // import { orderItemsSum } from '../../../api/revenueData';
@@ -62,21 +64,6 @@ const domEvents = (uid) => {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleOrder(firebaseKey).then((orderObj) => orderDetails(orderObj.firebaseKey));
     }
-    // REVENUE BTN CLICKED
-    // if (e.target.id.includes('view-revenue-dom-btn')) {
-    //   getRevenue().then((revenueArray) => {
-    //     // const findOrderType = revenueArray.filter((item) => item.order_type.toLowerCase);
-    //     // const findPaymentType = revenueArray.filter((item) => item.payment_type.toLowerCase);
-    //     // const findTipAmount = revenueArray.filter((item) => Number(item.tip));
-    //     // const tipSum = findTipAmount.reduce((a, b) => a + b.tip, 0);
-    //     // document.querySelector('totalTips').innerHTML = tipSum.toFixed(2);
-    //     // const findTotalAmount = revenueArray.filter((item) => Number(item.total));
-    //     // const totalSum = findTotalAmount.reduce((a, b) => a + b.total, 0);
-    //     // document.querySelector('#totalRevenue').innerHTML = totalSum.toFixed(2);
-    //     revenue(uid);
-    //   });
-    //   // getRevenue().then((revenueArray) => revenue(revenueArray));
-    // }
   });
 
   document.querySelector('#view-orders-dom-btn').addEventListener('click', () => {
@@ -88,8 +75,9 @@ const domEvents = (uid) => {
     addOrderForm({}, uid);
   });
 
+  // REVENUE BTN CLICKED ON HOME SCREEN
   document.querySelector('#view-revenue-dom-btn').addEventListener('click', () => {
-    console.warn('Help');
+    getRevenue(uid).then((revenueArray) => revenue(revenueArray));
   });
 };
 

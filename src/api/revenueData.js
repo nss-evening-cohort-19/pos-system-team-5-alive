@@ -7,7 +7,13 @@ const dbUrl = firebaseConfig.databaseURL;
 // GET REVENUE PAGE
 const getRevenue = (uid) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/revenues.json?orderBy="uid"&equalTo="${uid}"`)
-    .then((response) => resolve(Object.values(response.data)))
+    .then((response) => {
+      if (response.data) {
+        resolve(Object.values(response.data));
+      } else {
+        resolve([]);
+      }
+    })
     .catch(reject);
 });
 
