@@ -4,7 +4,7 @@ import renderToDom from '../../helpers/renderToDom';
 const closeOrder = (orderId, total) => {
   clearDom();
   const orderTotal = `<h1>Order Total: $${total}</h1>`;
-  const content = `<form id="submitPayment--${orderId}">
+  const content = `<form id="submitPayment--${orderId}--${total}">
       <div class="mb-3">
         <label for="payment-type" class="form-label">Payment Type</label>
         <select id="payType" class="form-select" aria-label="Default select example">
