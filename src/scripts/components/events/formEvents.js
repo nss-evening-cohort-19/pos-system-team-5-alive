@@ -1,4 +1,9 @@
-import { createOrder, editOrder, getOrders } from '../../../api/orderData';
+import {
+  createOrder,
+  editOrder,
+  getOrders,
+  getSingleOrder
+} from '../../../api/orderData';
 import { showOrders } from '../pages/viewOrders';
 import { createItem, updateItem } from '../../../api/itemData';
 import orderDetails from '../pages/orderDetails';
@@ -67,8 +72,7 @@ const formEvents = (uid) => {
         date: new Date().toLocaleString(),
         status: 'closed',
         total: (Number(total) + Number(document.querySelector('#tipAmount').value)).toFixed(2),
-        orderType: 'Phone',
-        orderId,
+        orderType: getSingleOrder(orderId),
         uid
       };
       postRevenue(revenueObj, uid).then(() => getRevenue(uid)).then((revenueArray) => revenue(revenueArray));
