@@ -65,8 +65,9 @@ const formEvents = (uid) => {
         payment: document.querySelector('#payType').value,
         tip: Number(document.querySelector('#tipAmount').value).toFixed(2),
         date: new Date().toLocaleString(),
-        orderType: 'closed',
+        status: 'closed',
         total: (Number(total) + Number(document.querySelector('#tipAmount').value)).toFixed(2),
+        orderType: 'Phone',
         orderId,
         uid
       };
