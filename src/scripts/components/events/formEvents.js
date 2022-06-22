@@ -57,12 +57,16 @@ const formEvents = (uid) => {
       });
     }
   });
-  document.querySelector('#form-container').addEventListener('click', (e) => {
+};
+
+const cancelEvent = () => {
+  document.querySelector('#cancel-div').addEventListener('click', (e) => {
     e.preventDefault();
-    if (e.target.id.includes('cancelBtn')) {
+    if (e.target.id.includes('cancel')) {
       const [, orderId] = e.target.id.split('--');
       orderDetails(orderId);
     }
   });
 };
-export default formEvents;
+
+export { formEvents, cancelEvent };
