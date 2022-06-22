@@ -18,10 +18,10 @@ const formEvents = (uid) => {
 
     if (e.target.id.includes('update-item')) {
       const [, firebaseKey, orderId] = e.target.id.split('--');
+      console.warn(orderId);
       const itemObj = {
         item: document.querySelector('#item-name').value,
         price: document.querySelector('#item-price').value,
-        firebaseKey
       };
       updateItem(itemObj, firebaseKey).then(() => {
         orderDetails(orderId);
