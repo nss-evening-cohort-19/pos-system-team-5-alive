@@ -76,7 +76,7 @@ const formEvents = (uid) => {
         date: new Date().toLocaleString(),
         status: 'closed',
         total: (Number(total) + Number(document.querySelector('#tipAmount').value)).toFixed(2),
-        orderType: singleOrderObj.type,
+        orderType: singleOrderObj,
         uid
       };
       postRevenue(revenueObj, uid).then(() => getRevenue(uid)).then((revenueArray) => revenue(revenueArray));

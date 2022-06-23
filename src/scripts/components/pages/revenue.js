@@ -8,6 +8,7 @@ const noRevenue = () => {
 
 const revenue = (array) => {
   clearDom();
+  let date = '';
   let sumRevenue = 0;
   let sumTips = 0;
   let sumCash = 0;
@@ -17,6 +18,7 @@ const revenue = (array) => {
   let sumInPersonOrder = 0;
   if (array.length) {
     array.forEach((item) => {
+      date = item.date;
       sumRevenue += Number(item.total);
       sumTips += Number(item.tip);
       if (item.payment === 'cash') {
@@ -38,7 +40,7 @@ const revenue = (array) => {
 
   const domString = `<div id='revenuePage'>
     <h1>REVENUE</h1>
-    <h4 id='dateRange'>Date Range:</h4>
+    <h4 id='dateRange'>Date Range: ${date}</h4>
     <h2 id='totalRevenue'>Total Revenue: $${sumRevenue.toFixed(2)}</h2>
     <p id='totalTips'>Total Tips: $${sumTips.toFixed(2)}</p>
     <p id='totalCallIn'>Total Call In Orders: ${sumPhoneOrder}</p>
