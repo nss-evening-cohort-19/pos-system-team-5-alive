@@ -73,7 +73,7 @@ const formEvents = (uid) => {
       const revenueObj = {
         payment: document.querySelector('#payType').value,
         tip: Number(document.querySelector('#tipAmount').value).toFixed(2),
-        date: new Date().toLocaleString(),
+        date: Date.now(),
         status: 'closed',
         total: (Number(total) + Number(document.querySelector('#tipAmount').value)).toFixed(2),
         orderType: singleOrderObj,
