@@ -66,13 +66,17 @@ const formEvents = (uid) => {
 
     if (e.target.id.includes('submitPayment')) {
       const [, orderId, total] = e.target.id.split('--');
+      let singleOrderObj;
+      getSingleOrder(orderId).then((response) => {
+        singleOrderObj = response;
+      });
       const revenueObj = {
         payment: document.querySelector('#payType').value,
         tip: Number(document.querySelector('#tipAmount').value).toFixed(2),
         date: new Date().toLocaleString(),
         status: 'closed',
         total: (Number(total) + Number(document.querySelector('#tipAmount').value)).toFixed(2),
-        orderType: getSingleOrder(orderId).type,
+        orderType: singleOrderObj.type,
         uid
       };
       postRevenue(revenueObj, uid).then(() => getRevenue(uid)).then((revenueArray) => revenue(revenueArray));
