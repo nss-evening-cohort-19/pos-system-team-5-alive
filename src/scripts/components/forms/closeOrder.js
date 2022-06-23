@@ -17,9 +17,11 @@ const closeOrder = (orderId, total) => {
     <div class="mb-3">
       <label for="tipAmount" class="form-label">Tip Amount</label>
       <input type="text" class="form-control" id="tipAmount">
-    </div> 
+    </div>
       <button id="submitBtn" type="submit" class="btn btn-success">Close Order</button>
-      <button id="cancelBtn--${orderId} "type="cancel" class="btn btn-primary">Go Back</button>
+    <div id="cancel-div">
+      <button id="cancelBtn--${orderId}" type="submit" class="btn btn-primary">Go Back</button>
+    </div>
     </form>`;
   renderToDom('#main-header', orderTotal);
   renderToDom('#form-container', content);

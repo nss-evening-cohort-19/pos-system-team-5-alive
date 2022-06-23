@@ -1,4 +1,4 @@
-import formEvents from '../components/events/formEvents';
+import { formEvents } from '../components/events/formEvents';
 import domBuilder from '../components/domBuilder';
 import domEvents from '../components/events/domEvents';
 import navEvents from '../components/events/navEvents';
