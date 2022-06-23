@@ -83,4 +83,15 @@ const formEvents = (uid) => {
     }
   });
 };
-export default formEvents;
+
+const cancelEvent = () => {
+  document.querySelector('#cancel-div').addEventListener('click', (e) => {
+    e.preventDefault();
+    if (e.target.id.includes('cancel')) {
+      const [, orderId] = e.target.id.split('--');
+      orderDetails(orderId);
+    }
+  });
+};
+
+export { formEvents, cancelEvent };
