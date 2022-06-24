@@ -20,7 +20,6 @@ const closedOrders = (array) => {
           <p class="order-email"><b>Customer Email:</b> ${obj.email}</p>
           <p class="order-number"><b>Customer Phone Number:</b> ${obj.phone}</p>
           <p class="order-type"><b>Order Type:</b> ${obj.type}</p>
-          <i class="btn btn-success fas fa-eye" id="order-details--${obj.firebaseKey}"></i>
           <i class="btn btn-danger fas fa-trash-alt" id="delete-order-btn--${obj.firebaseKey}"></i>
         </div>
       </div>`;
