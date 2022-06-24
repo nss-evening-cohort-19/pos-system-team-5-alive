@@ -17,7 +17,7 @@ const navEvents = (user) => {
     domEvents(user.uid);
   });
 
-  // VIEW ORDER CARDS
+  // VIEW OPEN ORDER CARDS
   document.querySelector('#viewOrders').addEventListener('click', () => {
     getOrders(user.uid).then((orderArray) => showOrders(orderArray));
   });
@@ -25,6 +25,11 @@ const navEvents = (user) => {
   // CREATE A NEW ORDER FORM
   document.querySelector('#createOrder').addEventListener('click', () => {
     addOrderForm(user.uid);
+  });
+
+  // VIEW CLOSED ORDER CARDS
+  document.querySelector('#allClosedOrders').addEventListener('click', () => {
+    console.warn('All closed order cards');
   });
 };
 
