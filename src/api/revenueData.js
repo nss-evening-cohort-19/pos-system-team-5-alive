@@ -6,7 +6,6 @@ const dbUrl = firebaseConfig.databaseURL;
 // GET REVENUE PAGE
 const getRevenue = (uid) => new Promise((resolve, reject) => {
   axios.get(`${dbUrl}/revenues.json?orderBy="uid"&equalTo="${uid}"`)
-<<<<<<< HEAD
     .then((response) => {
       if (response.data) {
         resolve(Object.values(response.data));
@@ -14,9 +13,6 @@ const getRevenue = (uid) => new Promise((resolve, reject) => {
         resolve([]);
       }
     })
-=======
-    .then((response) => resolve(Object.values(response.data)))
->>>>>>> main
     .catch(reject);
 });
 
