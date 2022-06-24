@@ -12,9 +12,11 @@ const closedOrders = (array) => {
   if (array.length) {
     let domString = '';
     array.forEach((obj) => {
-      domString += `<div class="card" style="width: 18rem;">
+      if (obj.status === 'closed') {
+        domString += `<div class="card" style="width: 18rem;">
         <div class="card-body">
           <h3 class="order-name">${obj.name}</h3>
+          <h5 class="order-status">Order Status: ${obj.status.toUpperCase()}</h5>
           <p class="order-email"><b>Customer Email:</b> ${obj.email}</p>
           <p class="order-number"><b>Customer Phone Number:</b> ${obj.phone}</p>
           <p class="order-type"><b>Order Type:</b> ${obj.type}</p>
@@ -22,6 +24,7 @@ const closedOrders = (array) => {
           <i class="btn btn-danger fas fa-trash-alt" id="delete-order-btn--${obj.firebaseKey}"></i>
         </div>
       </div>`;
+      }
     });
     renderToDom('#order-div', domString);
   } else {

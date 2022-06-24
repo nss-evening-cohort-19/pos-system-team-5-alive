@@ -1,4 +1,4 @@
-import { getClosedOrders, getOrders } from '../../../api/orderData';
+import { getOrders } from '../../../api/orderData';
 import signOut from '../../helpers/signOut';
 import homeButtons from '../pages/homeScreen';
 import addOrderForm from '../forms/createOrder';
@@ -7,7 +7,7 @@ import clearDom from '../../helpers/clearDom';
 import domEvents from './domEvents';
 import { closedOrders } from '../pages/closedOrderCards';
 
-const navEvents = (user, firebaseKey) => {
+const navEvents = (user) => {
   // LOGOUT BUTTON
   document.querySelector('#logout-btn').addEventListener('click', signOut);
 
@@ -30,7 +30,7 @@ const navEvents = (user, firebaseKey) => {
 
   // VIEW CLOSED ORDER CARDS
   document.querySelector('#allClosedOrders').addEventListener('click', () => {
-    getClosedOrders(firebaseKey).then((closedOrdersArray) => closedOrders(closedOrdersArray));
+    getOrders(user.uid).then((closedOrderArray) => closedOrders(closedOrderArray));
   });
 };
 
