@@ -57,6 +57,10 @@ const domEvents = (uid) => {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleOrder(firebaseKey).then((orderObj) => orderDetails(orderObj.firebaseKey));
     }
+    // REVENUE BTN CLICKED
+    if (e.target.id.includes('view-revenue-dom-btn')) {
+      console.warn('Will render revenue page');
+    }
   });
 
   document.querySelector('#view-orders-dom-btn').addEventListener('click', () => {
