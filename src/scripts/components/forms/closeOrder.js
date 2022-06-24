@@ -8,7 +8,7 @@ const closeOrder = (orderId, total) => {
       <div class="mb-3">
         <label for="payment-type" class="form-label">Payment Type</label>
         <select id="payType" class="form-select" aria-label="Default select example" required>
-        <option selected>Open this select menu</option>
+        <option selected value="">Open this select menu</option>
           <option value="cash">Cash</option>
           <option value="card">Card</option>
           <option value="mobile">Mobile</option>
