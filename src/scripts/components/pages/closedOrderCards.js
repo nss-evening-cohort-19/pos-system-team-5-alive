@@ -5,6 +5,7 @@ const noClosedOrders = () => {
   const domString = '<h1>No Closed Orders</h1>';
   renderToDom('#order-div', domString);
 };
+
 const closedOrders = (array) => {
   clearDom();
 
