@@ -6,6 +6,8 @@ import closeOrder from '../forms/closeOrder';
 import addItem from '../forms/createItem';
 import orderDetails from '../pages/orderDetails';
 import { showOrders } from '../pages/viewOrders';
+import { getRevenue } from '../../../api/revenueData';
+import revenue from '../pages/revenue';
 import { cancelEvent } from './formEvents';
 
 const domEvents = (uid) => {
@@ -57,10 +59,6 @@ const domEvents = (uid) => {
       const [, firebaseKey] = e.target.id.split('--');
       getSingleOrder(firebaseKey).then((orderObj) => orderDetails(orderObj.firebaseKey));
     }
-    // REVENUE BTN CLICKED
-    if (e.target.id.includes('view-revenue-dom-btn')) {
-      console.warn('Will render revenue page');
-    }
   });
 
   document.querySelector('#view-orders-dom-btn').addEventListener('click', () => {
@@ -72,8 +70,9 @@ const domEvents = (uid) => {
     addOrderForm({}, uid);
   });
 
+  // REVENUE BTN CLICKED ON HOME SCREEN
   document.querySelector('#view-revenue-dom-btn').addEventListener('click', () => {
-    console.warn('clicked view revenue btn');
+    getRevenue(uid).then((revenueArray) => revenue(revenueArray));
   });
 };
 
