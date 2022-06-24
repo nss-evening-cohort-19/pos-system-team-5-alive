@@ -9,9 +9,9 @@ const showOrders = (array) => {
   clearDom();
 
   if (array.length) {
-    let domString = '';
+    let domString = '<div class="show-orders-div">';
     array.forEach((obj) => {
-      domString += `<div class="card" style="width: 18rem;">
+      domString += `<div class="order-card card" style="width: 18rem;">
         <div class="card-body">
           <h3 class="order-name">${obj.name}</h3>
           <p class="order-email"><b>Customer Email:</b> ${obj.email}</p>
@@ -23,6 +23,7 @@ const showOrders = (array) => {
         </div>
       </div>`;
     });
+    domString += '</div>';
     renderToDom('#order-div', domString);
   } else {
     emptyOrders();

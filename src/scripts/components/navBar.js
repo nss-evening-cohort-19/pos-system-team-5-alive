@@ -6,16 +6,15 @@ const navBar = () => {
   <nav class="navbar navbar-expand-lg" style="background-color:#F8F7F2;">
   <div class="container-fluid">
     <a class="navbar-brand" id="home">
-      <img src=${hhpwLogo} alt="Hip Hop, Pizza and Wangs Logo" width="65" height="65">
-      HHP+W
+      <img src=${hhpwLogo} alt="Hip Hop, Pizza and Wangs Logo" width="80" height="80">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link" aria-current="page" id="viewOrders">View Orders</a>
-        <a class="nav-link" id="createOrder">Create an Order</a>
+        <a class="nav-link" aria-current="page" id="viewOrders" style="color: black;">View Orders</a>
+        <a class="nav-link" id="createOrder" style="color: black;">Create an Order</a>
       </div>
     </div>
   <div id="logout-btn"></div>

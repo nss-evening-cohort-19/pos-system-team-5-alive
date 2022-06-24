@@ -26,3 +26,72 @@ body {
 #cancel-div{
   display: inline-block;
 }
+
+.home-btns {
+  display: flex;
+  flex-direction: column;
+  max-width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+}
+
+.home-btns button {
+  margin: 20px;
+}
+
+h1 {
+  margin: 20px 0px 120px 0px;
+  text-align: center;
+}
+
+img {
+  margin-left: 20px;
+}
+
+.show-orders-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#order-div {
+  margin: 20px;
+}
+
+.order-card {
+  margin: 20px;
+}
+
+h2 {
+  text-align: center;
+}
+
+.add-item-form {
+  max-width: 30%;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.orderDetailButtons {
+  display: flex;
+  flex-direction: row;
+  max-width: 25%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  justify-content: space-evenly;
+  
+}
+
+.order-details-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 35%;
+  margin: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
