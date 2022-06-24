@@ -1,7 +1,14 @@
-import { createOrder, editOrder, getOrders } from '../../../api/orderData';
+import {
+  createOrder,
+  editOrder,
+  getOrders,
+  getSingleOrder
+} from '../../../api/orderData';
 import { showOrders } from '../pages/viewOrders';
 import { createItem, updateItem } from '../../../api/itemData';
 import orderDetails from '../pages/orderDetails';
+import revenue from '../pages/revenue';
+import { getRevenue, postRevenue } from '../../../api/revenueData';
 
 const formEvents = (uid) => {
   document.querySelector('#form-container').addEventListener('submit', (e) => {
@@ -54,6 +61,24 @@ const formEvents = (uid) => {
       };
       editOrder(orderObj, uid).then(() => {
         getOrders(uid).then((orderArray) => showOrders(orderArray));
+      });
+    }
+
+    if (e.target.id.includes('submitPayment')) {
+      const [, orderId, total] = e.target.id.split('--');
+      let singleOrderObj;
+      getSingleOrder(orderId).then((response) => {
+        singleOrderObj = response;
+        const revenueObj = {
+          payment: document.querySelector('#payType').value,
+          tip: Number(document.querySelector('#tipAmount').value).toFixed(2),
+          date: Date.now(),
+          status: 'closed',
+          total: (Number(total) + Number(document.querySelector('#tipAmount').value)).toFixed(2),
+          orderType: singleOrderObj.type,
+          uid
+        };
+        postRevenue(revenueObj, uid).then(() => getRevenue(uid)).then((revenueArray) => revenue(revenueArray));
       });
     }
   });
