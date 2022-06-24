@@ -1,6 +1,7 @@
 import {
   createOrder,
   editOrder,
+  getClosedOrders,
   getOrders,
   getSingleOrder
 } from '../../../api/orderData';
@@ -78,7 +79,7 @@ const formEvents = (uid) => {
           orderType: singleOrderObj.type,
           uid
         };
-        postRevenue(revenueObj, uid).then(() => getRevenue(uid)).then((revenueArray) => revenue(revenueArray));
+        postRevenue(revenueObj, uid).then(() => getRevenue(uid)).then((revenueArray) => revenue(revenueArray)).then(() => getClosedOrders(orderId));
       });
     }
   });

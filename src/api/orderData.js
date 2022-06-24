@@ -51,10 +51,20 @@ const deleteOrder = (firebaseKey, uid) => new Promise((resolve, reject) => {
     .catch((error) => reject(error));
 });
 
+// ALL CLOSED ORDERS
+const getClosedOrders = (firebaseKey) => new Promise((resolve, reject) => {
+  getSingleOrder(firebaseKey);
+  const body = { status: 'closed' };
+  axios.patch(`${dbUrl}/orders/${firebaseKey}.json`, body)
+    .then((response) => resolve(response.data))
+    .catch(reject);
+});
+
 export {
   getOrders,
   createOrder,
   editOrder,
   deleteOrder,
-  getSingleOrder
+  getSingleOrder,
+  getClosedOrders
 };
