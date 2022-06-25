@@ -7,12 +7,13 @@ const emptyOrders = () => {
 };
 const showOrders = (array) => {
   clearDom();
-
-  if (array.length) {
+  const renderArray = array.filter((order) => order.status === 'open');
+  if (renderArray.length) {
     let domString = '';
-    array.forEach((obj) => {
-      if (obj.status === 'open') {
-        domString += `<div class="card" style="width: 18rem;">
+    const searchBar = '<div id="search-div" class="search-div"><input id="orderSearch" class="search form-control me-2" type="search" placeholder="Order Search" aria-label="Search"</div>';
+    renderToDom('#main-header', searchBar);
+    renderArray.forEach((obj) => {
+      domString += `<div class="card" style="width: 18rem;">
           <div class="card-body">
             <h3 class="order-name">${obj.name}</h3>
             <p class="order-email"><b>Customer Email:</b> ${obj.email}</p>
@@ -23,7 +24,6 @@ const showOrders = (array) => {
             <i class="btn btn-danger fas fa-trash-alt" id="delete-order-btn--${obj.firebaseKey}"></i>
           </div>
         </div>`;
-      }
     });
     renderToDom('#order-div', domString);
   } else {
