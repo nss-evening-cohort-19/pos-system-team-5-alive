@@ -15,6 +15,7 @@ const navBar = () => {
       <div class="navbar-nav">
         <a class="nav-link" aria-current="page" id="viewOrders" style="color: black;">View Orders</a>
         <a class="nav-link" id="createOrder" style="color: black;">Create an Order</a>
+        <a class="nav-link" id="allClosedOrders" style="color: black;">Closed Orders</a>
       </div>
     </div>
   <div id="logout-btn"></div>

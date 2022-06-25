@@ -95,3 +95,39 @@ h2 {
   margin-left: auto;
   margin-right: auto;
 }
+
+.add-order-form {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-group {
+  margin-top: 20px;
+}
+
+.form-floating {
+  margin-top: 20px;
+}
+
+.create-order-btn {
+  margin-top: 20px;
+}
+
+.order-details-btn {
+  padding: 5px 30px;
+}
+
+.close-order-form {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#revenuePage {
+  text-align: center;
+}

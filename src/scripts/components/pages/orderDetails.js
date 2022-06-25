@@ -21,8 +21,8 @@ const orderDetails = (orderId) => {
       });
       total = total.toFixed(2);
       content += `<div class="orderDetailButtons">
-    <button id="addItemBtn--${orderId}" type="button" class="btn btn-success">Add Item</button>
-    <button id="paymentBtn--${orderId}--${total}" type="button" class="btn btn-primary">Go To Payment</button>
+    <button id="addItemBtn--${orderId}" type="button" class="order-details-btn btn btn-success">Add Item</button>
+    <button id="paymentBtn--${orderId}--${total}" type="button" class="order-details-btn btn btn-primary">Go To Payment</button>
     </div>`;
       renderToDom('#main-header', `<h1>Total: $${total}</h1>`);
       renderToDom('#order-div', content);

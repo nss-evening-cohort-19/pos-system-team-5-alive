@@ -5,6 +5,7 @@ import addOrderForm from '../forms/createOrder';
 import { showOrders } from '../pages/viewOrders';
 import clearDom from '../../helpers/clearDom';
 import domEvents from './domEvents';
+import { closedOrders } from '../pages/closedOrderCards';
 
 const navEvents = (user) => {
   // LOGOUT BUTTON
@@ -17,7 +18,7 @@ const navEvents = (user) => {
     domEvents(user.uid);
   });
 
-  // VIEW ORDER CARDS
+  // VIEW OPEN ORDER CARDS
   document.querySelector('#viewOrders').addEventListener('click', () => {
     getOrders(user.uid).then((orderArray) => showOrders(orderArray));
   });
@@ -25,6 +26,11 @@ const navEvents = (user) => {
   // CREATE A NEW ORDER FORM
   document.querySelector('#createOrder').addEventListener('click', () => {
     addOrderForm(user.uid);
+  });
+
+  // VIEW CLOSED ORDER CARDS
+  document.querySelector('#allClosedOrders').addEventListener('click', () => {
+    getOrders(user.uid).then((closedOrderArray) => closedOrders(closedOrderArray));
   });
 };
 
