@@ -1,47 +1,23 @@
-<div style="text-align: center">
+<div style="text-align:center">
 <h1>Hip Hop, Pizza, and Wangs (HHP+W)</h1>
 
 <image src="./instructions/hhpw-record.png" style="height:300px;"></image></div>
 
-## Get Started
-**READ ALL INSTRUCTIONS BEFORE BEGINNING THIS PROJECT.** Take notes as you read.
+Primary Features - The application allows a user to create a personal order or set of orders. A user can create, edit, update and delete their individual order or orders only. Here's some examples of how it works:
+<div><img src="./src/scripts/components/image-gifs/ezgif.com-gif-maker (1).gif" style="height:800px;"></img>
 
-Everything that needs to be done before coding starts.
+<img src="./src/scripts/components/image-gifs/ezgif.com-gif-maker (2).gif" style="height:800px;">
 
-* **ERD** - Create an ERD to show the relationships between all of  your data
-* **Postman Collection** - Create a postman collection to store and test out all of your API calls.
-* **[Wireframes](https://www.figma.com/file/4y3EZddALuBR3ouSEM57Np/MVP?node-id=0%3A1)** - This is the basic MVP wireframe. You can choose to style how you wish. (View the [click through prototype](https://www.figma.com/proto/4y3EZddALuBR3ouSEM57Np/MVP?scaling=scale-down&page-id=0%3A1&starting-point-node-id=2%3A2) if you want to see the flow)
-* **Flowchart** - Plan out the flow of your data through the application
-* **Github Issue Tickets** - Using the Project Instructions as a guide, create issue tickets for this project’s work.
-* **Github Milestones** - Separate those issue tickets into Milestones to plan out the work.
-* **Github Project Board** - Create a project board, add all of your issue tickets, and order them by priority.
+<img src="./src/scripts/components/image-gifs/ezgif.com-gif-maker (3).gif" style="height:800px;">
 
-## Definition of Done
+<img src="./src/scripts/components/image-gifs/ezgif.com-gif-maker (4).gif" style="height:800px;">
 
-Do not submit this project until all of the following are complete:
+<img src="./src/scripts/components/image-gifs/ezgif.com-gif-maker.gif" style="height:800px;">
 
-1. All items are completed in getting started
-1. MVP, defined by the Acceptance Criteria, has been completed
-1. The title of your application is visible in the browser tab
-1. The project has been deployed
-1. Loom video has been created
-1. `README.md` has been updated
+Target Audience - This is for any user that wishes to order items from Hop! Pizza.
 
-## Requirements
+Purpose - This project is usefulfor ordering and purchasing items from Hop! Pizza.
 
-Things to remember while coding out the project
+Getting Started - You can start testing the product by logging in with your respective Google account. Use the home page buttons to begin creating an order to add or update items until closing the order after payment. You may view and edit your personal user order at any time before closing.
 
-* Clean code - single responsibility principle
-* ES6 Modules bundled with webpack
-* No errors - linters should be clean
-* Bootstrap 5 for styling
-* Completely planned out - before each section you should be making new cards on your Github project board before you code
-* Wireframes are provided for you for MVP
-* You should have an ERD
-
-### Instructions
-
-* [MVP Definition - It Gets the Job Done](./instructions/mvp.md)
-* [Stretch Goals 1 - Filtering the Data](./instructions/stretch-1.md)
-* [Stretch Goals 2 - Dealing with Change](./instructions/stretch-2.md)
-* [Stretch Goals 3 - Play that Funky Music](./instructions/stretch-3.md)
+Check out a presentation of our application: https://www.loom.com/share/9326b3f393974e96a6f212d082d88256
