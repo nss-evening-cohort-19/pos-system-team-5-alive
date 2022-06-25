@@ -1,4 +1,4 @@
-<div style="text-align:center">
+<div style="text-align: center">
 <h1>Hip Hop, Pizza, and Wangs (HHP+W)</h1>
 
 <image src="./instructions/hhpw-record.png" style="height:300px;"></image></div>
