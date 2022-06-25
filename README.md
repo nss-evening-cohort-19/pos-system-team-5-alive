@@ -13,7 +13,7 @@ Primary Features - The application allows a user to create a personal order or s
 <img src="./src/scripts/components/image-gifs/ezgif.com-gif-maker (4).gif" style="height:800px;">
 
 <img src="./src/scripts/components/image-gifs/ezgif.com-gif-maker.gif" style="height:800px;">
-<img src="./src/scripts/components/image-gifs/erd-hip-hop.jpg" style="height:800px;">
+<img src="./src/scripts/components/image-gifs/erd-hip-hop.jpg">
 
 Target Audience - This is for any user that wishes to order items from Hop! Pizza.
 
