@@ -3,21 +3,21 @@
 
 
 body {
-  background-color: antiquewhite;
-  color: brown;
+  background-color: #adb5bd;
+  color: black;
 }
 
 .login {
-  background-image: url(https://p4.wallpaperbetter.com/wallpaper/997/201/154/music-equalizer-wallpaper-preview.jpg);
+  background-image: url(https://wallpaperaccess.com/full/3192193.jpg);
   position: fixed;
   top: 0;
   bottom: 0;
   min-width: 100%;
   max-width: 100%;
-  padding-top: 87px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   img {
     height: 400px;
     width: 400px;
@@ -62,7 +62,7 @@ img {
 .show-orders-div {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 #order-div {
@@ -140,4 +140,7 @@ h2 {
 
 #revenuePage {
   text-align: center;
+  ul {
+    list-style: none;
+  }
 }

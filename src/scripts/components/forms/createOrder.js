@@ -18,13 +18,14 @@ const addOrderForm = (obj = {}) => {
         <label for="number">Customer Phone Number</label>
         <input type="text" class="form-control" id="phone" placeholder="Customer Phone Number" value="${obj.phone || ''}" required>
       </div>
-      <div class="form-floating">
+      <br>
+      <div class="form">
+        <label for="form-select">Order Type</label>
         <select class="form-select" id="orderType" required>
         <option value="" selected>Select an order type</option>
         <option value="Phone" ${obj.type === 'Phone' ? 'selected' : ''}>Phone</option>
         <option value="In Person" ${obj.type === 'In Person' ? 'selected' : ''}>In Person</option>
         </select>
-        <label for="floatingSelect">Select an order type</label>
       </div>
       <div class="form-group" id="select-order">
       </div>

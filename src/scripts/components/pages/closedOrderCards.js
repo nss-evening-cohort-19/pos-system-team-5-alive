@@ -10,7 +10,7 @@ const closedOrders = (array) => {
   clearDom();
 
   if (array.length) {
-    let domString = '';
+    let domString = '<div class="show-orders-div">';
     array.forEach((obj) => {
       if (obj.status === 'closed') {
         domString += `<div class="card" style="width: 18rem;">
@@ -25,6 +25,7 @@ const closedOrders = (array) => {
       </div>`;
       }
     });
+    domString += '</div>';
     renderToDom('#order-div', domString);
   } else {
     noClosedOrders();

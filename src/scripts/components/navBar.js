@@ -3,7 +3,7 @@ import renderToDom from '../helpers/renderToDom';
 
 const navBar = () => {
   const domString = `
-  <nav class="navbar navbar-expand-lg" style="background-color:#F8F7F2;">
+  <nav class="navbar navbar-expand-lg" style="background-color:#f9c74f;">
   <div class="container-fluid">
     <a class="navbar-brand" id="home">
       <img src=${hhpwLogo} alt="Hip Hop, Pizza and Wangs Logo" width="80" height="80">

@@ -3,7 +3,7 @@ import renderToDom from '../../helpers/renderToDom';
 
 const addItem = (obj = {}, orderId) => {
   clearDom();
-  const domString = `<h2>Add Item</h2>
+  const domString = `<h2>${obj.firebaseKey ? 'Update Item' : 'Add Item'}</h2>
   <div class="add-item-form">
   <form id="${obj.firebaseKey ? `update-item--${obj.firebaseKey}--${orderId}` : `submit-item--${orderId}`}">
   <div class="mb-3">
