@@ -1,5 +1,5 @@
 import signIn from '../helpers/signIn';
-import hhpwLogo from './image/hhpw-record.png';
+import hhpwLogo from './image-gifs/hhpw-record.png';
 
 // GOOGLE LOGIN BUTTON
 const loginButton = () => {
