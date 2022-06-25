@@ -16,7 +16,7 @@ const closeOrder = (orderId, total) => {
       </div>
     <div class="mb-3">
       <label for="tipAmount" class="form-label">Tip Amount</label>
-      <input type="text" class="form-control" id="tipAmount" required>
+      <input type="number" class="form-control" id="tipAmount" required>
     </div>
       <button id="submitBtn" type="submit" class="btn btn-success">Close Order</button>
     <div id="cancel-div">

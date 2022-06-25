@@ -23,6 +23,16 @@ body {
     width: 400px;
   }
 }
+.search-div{
+  display: flex;
+  justify-content: center;
+  margin: 10px 0px 10px 0px;
+}
+.search {
+  width: 50%;
+  max-width: 40%;
+}
+
 #cancel-div{
   display: inline-block;
 }
