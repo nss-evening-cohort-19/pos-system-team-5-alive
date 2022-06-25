@@ -9,7 +9,7 @@ const showOrders = (array) => {
   clearDom();
   const renderArray = array.filter((order) => order.status === 'open');
   if (renderArray.length) {
-    let domString = '';
+    let domString = '<div class="show-orders-div">';
     const searchBar = '<div id="search-div" class="search-div"><input id="orderSearch" class="search form-control me-2" type="search" placeholder="Order Search" aria-label="Search"</div>';
     renderToDom('#main-header', searchBar);
     renderArray.forEach((obj) => {
@@ -25,6 +25,7 @@ const showOrders = (array) => {
           </div>
         </div>`;
     });
+    domString += '</div>';
     renderToDom('#order-div', domString);
   } else {
     emptyOrders();

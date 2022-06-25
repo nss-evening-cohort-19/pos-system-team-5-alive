@@ -4,7 +4,7 @@ import renderToDom from '../../helpers/renderToDom';
 const closeOrder = (orderId, total) => {
   clearDom();
   const orderTotal = `<h1>Order Total: $${total}</h1>`;
-  const content = `<form id="submitPayment--${orderId}--${total}">
+  const content = `<div class="close-order-form"><form id="submitPayment--${orderId}--${total}">
       <div class="mb-3">
         <label for="payment-type" class="form-label">Payment Type</label>
         <select id="payType" class="form-select" aria-label="Default select example" required>
@@ -22,7 +22,8 @@ const closeOrder = (orderId, total) => {
     <div id="cancel-div">
       <button id="cancelBtn--${orderId}" type="submit" class="btn btn-primary">Go Back</button>
     </div>
-    </form>`;
+    </form>
+    </div>`;
   renderToDom('#main-header', orderTotal);
   renderToDom('#form-container', content);
 };
