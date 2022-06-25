@@ -1,4 +1,4 @@
-import hhpwLogo from './image/hhpw-record.png';
+import hhpwLogo from './image-gifs/hhpw-record.png';
 import renderToDom from '../helpers/renderToDom';
 
 const navBar = () => {
